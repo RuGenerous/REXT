@@ -5,7 +5,7 @@ An open source interface for Rugenerous -- a community-driven decentralized exch
 - Website: [swap.rug.farm](https://swap.rug.farm/)
 - DAO Interface: [app.rug.farm](https://app.rug.farm)
 - Telegram: [Rugenerous](https://t.me/rugenerous)
-- Discord: [Rugenerous](https://discord.com/invite/PARrDYYbfw)
+- Discord: [Rugenerous](https://discord.gg/N5dgz3Nbpz)
 - Twitter: [@rugenerous](https://twitter.com/rugenerous)
 
 
