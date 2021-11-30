@@ -75,7 +75,7 @@ export default function RugBalanceContent({ setShowRugBalanceModal }: { setShowR
       JSBI.multiply(oneToken, avaxRugTokenPair.reserveOf(wavax).raw),
       avaxRugTokenPair.reserveOf(rug).raw
     )
-    rugPrice = JSBI.toNumber(avaxRugRatio) / 1000000000
+    rugPrice = JSBI.toNumber(avaxRugRatio) / 1000000000000000000
   }
 
   return (
