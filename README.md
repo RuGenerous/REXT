@@ -2,7 +2,7 @@
 
 An open source interface for Rugenerous -- a community-driven decentralized exchange for Avalanche and Ethereum assets with fast settlement, low transaction fees, and a democratic distribution -- powered by Avalanche.
 
-- Website: [ruggy.exchange](https://ruggy.exchange/)
+- Website: [swap.rug.farm](https://swap.rug.farm/)
 - DAO Interface: [app.rug.farm](https://app.rug.farm)
 - Telegram: [Rugenerous](https://t.me/rugenerous)
 - Discord: [Rugenerous](https://discord.com/invite/PARrDYYbfw)
@@ -12,7 +12,7 @@ An open source interface for Rugenerous -- a community-driven decentralized exch
 
 ## Accessing the Rugenerous Interface
 
-Visit [app.ruggy.exchange](https://app.ruggy.exchange).
+Visit [swap.rug.farm](https://swap.rug.farm).
 
 ## Development
 
