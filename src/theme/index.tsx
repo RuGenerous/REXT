@@ -9,6 +9,7 @@ import styled, {
 import { useIsDarkMode } from '../state/user/hooks'
 import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
+import Sansation from '../assets/fonts/sansation.regular.ttf'
 
 export * from './components'
 
@@ -45,13 +46,13 @@ export function colors(darkMode: boolean): Colors {
     text2: darkMode ? '#C3C5CB' : '#565A69',
     text3: darkMode ? '#6C7284' : '#888D9B',
     text4: darkMode ? '#565A69' : '#C3C5CB',
-    text5: darkMode ? '#2C2F36' : '#EDEEF2',
+    text5: darkMode ? '#2BA9AE' : '#2BA9AE',
 
     // backgrounds / greys
-    bg1: darkMode ? '#212429' : '#FFFFFF',
-    bg2: darkMode ? '#2C2F36' : '#F7F8FA',
+    bg1: darkMode ? '#3E3A71' : '#3E3A71',
+    bg2: darkMode ? '#3E3A71' : '#3E3A71',
     bg3: darkMode ? '#40444F' : '#EDEEF2',
-    bg4: darkMode ? '#565A69' : '#CED0D9',
+    bg4: darkMode ? '#2BA9AE' : '#2BA9AE',
     bg5: darkMode ? '#6C7284' : '#888D9B',
 
     //specialty colors
@@ -59,24 +60,24 @@ export function colors(darkMode: boolean): Colors {
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: darkMode ? '#2172E5' : '#FF6B00',
-    primary2: darkMode ? '#3680E7' : '#FF6B00',
+    primary1: darkMode ? '#2BA9AE' : '#3E3A71',
+    primary2: darkMode ? '#2BA9AE' : '#2BA9AE',
     primary3: darkMode ? '#4D8FEA' : '#FF6B00',
     primary4: darkMode ? '#376bad70' : '#FF6B00',
     primary5: darkMode ? '#153d6f70' : '#FF6B00',
-    primary6: darkMode ? '#2172E5' : '#FFFFFF',
+    primary6: darkMode ? '#2BA9AE' : '#2BA9AE',
 
     // color text
     primaryText1: darkMode ? '#6da8ff' : '#ffffff',
 
     // secondary colors
-    secondary1: darkMode ? '#2172E5' : '#ff007a',
-    secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    secondary1: darkMode ? '#2BA9AE' : '#2BA9AE',
+    secondary2: darkMode ? '#2BA9AE' : '#F6DDE8',
+    secondary3: darkMode ? '#2BA9AE' : '#FDEAF1',
 
     // other
-    red1: '#FF6871',
-    red2: '#F82D3A',
+    red1: '#2BA9AE',
+    red2: '#2BA9AE',
     green1: '#27AE60',
     yellow1: '#FFE270',
     yellow2: '#F3841E',
@@ -84,9 +85,6 @@ export function colors(darkMode: boolean): Colors {
 
     avaxRed: '#E84142'
 
-    // dont wanna forget these blue yet
-    // blue4: darkMode ? '#153d6f70' : '#C4D9F8',
-    // blue5: darkMode ? '#153d6f70' : '#EBF4FF',
   }
 }
 
@@ -179,8 +177,13 @@ export const TYPE = {
 }
 
 export const FixedGlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-famiy: Sansation;
+  src: local('Sansation') url(${Sansation} format(truetype))
+}
 html, input, textarea, button {
-  font-family: 'Inter', sans-serif;
+  font-family: Sansation;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {

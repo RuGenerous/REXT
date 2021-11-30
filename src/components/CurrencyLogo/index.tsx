@@ -2,13 +2,13 @@ import { Currency, CAVAX, Token } from '@rugenerous/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import AvaxLogo from '../../assets/images/avalanche_token_round.rug'
+import AvaxLogo from '../../assets/images/avalanche_token_round.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
 
 const getTokenLogoURL = (address: string) =>
-  `https://raw.githubusercontent.com/rugenerous/tokens/main/assets/${address}/logo.rug`
+  `https://raw.githubusercontent.com/rugenerous/tokens/main/assets/${address}/logo.png`
 
 export const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};

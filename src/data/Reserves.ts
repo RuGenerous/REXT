@@ -1,6 +1,6 @@
 import { TokenAmount, Pair, Currency, ChainId } from '@rugenerous/sdk'
 import { useMemo } from 'react'
-import { abi as IRugenerousPairABI } from '@rugenerous/exchange-contracts/artifacts/contracts/rugenerous-core/interfaces/IRugenerousPair.sol/IRugenerousPair.json'
+import { abi as IRugenerousPairABI } from '@rugenerous/exchange-contracts/artifacts/contracts/ruggy-core/interfaces/IRuggyPair.sol/IRuggyPair.json'
 import { Interface } from '@ethersproject/abi'
 import { useActiveWeb3React } from '../hooks'
 

@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/svg/icon.svg'
-import LogoDark from '../../assets/svg/icon.svg'
+import Logo from '../../assets/images/rugNoBg.png'
+import LogoDark from '../../assets/images/rugNoBg.png'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances, useAggregateRugBalance } from '../../state/wallet/hooks'
@@ -25,7 +25,6 @@ import Web3Status from '../Web3Status'
 import Modal from '../Modal'
 import RugBalanceContent from './RlgBalanceContent'
 import usePrevious from '../../hooks/usePrevious'
-import { ANALYTICS_PAGE } from '../../constants'
 import LanguageSelection from '../LanguageSelection'
 
 const HeaderFrame = styled.div`
@@ -80,7 +79,7 @@ const HeaderControls = styled.div`
 const HeaderElement = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 20px;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
    flex-direction: row-reverse;
@@ -111,7 +110,7 @@ const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg3)};
+  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg4)};
   border-radius: 12px;
   white-space: nowrap;
   width: 100%;
@@ -131,7 +130,7 @@ const RUGAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #f97316 0%, #e84142 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #2BA9AE 0%, #3E3A71 100%), #edeef2;
 `
 
 const RUGWrapper = styled.span`
@@ -169,6 +168,7 @@ const BalanceText = styled(Text)`
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     display: none;
   `};
+  
 `
 
 const Title = styled.a`
@@ -204,10 +204,11 @@ const StyledNavLink = styled(NavLink).attrs({
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.text2};
-  font-size: 1rem;
+  font-size: 2rem;
   width: fit-content;
   margin: 0 12px;
   font-weight: 500;
+  
 
   &.${activeClassName} {
     border-radius: 12px;
@@ -231,7 +232,7 @@ const StyledExternalLink = styled(ExternalLink).attrs({
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.text2};
-  font-size: 1rem;
+  font-size: 2rem;
   width: fit-content;
   margin: 0 12px;
   font-weight: 500;
@@ -280,15 +281,12 @@ export default function Header() {
       <HeaderRow>
         <Title href=".">
           <RugIcon>
-            <img width={'24px'} src={isDark ? LogoDark : Logo} alt="logo" />
+            <img width={'75px'} src={isDark ? LogoDark : Logo} alt="logo" />
           </RugIcon>
         </Title>
         <HeaderLinks>
           <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
             {t('header.swap')}
-          </StyledNavLink>
-          <StyledNavLink id={`swap-nav-link`} to={'/buy'}>
-            {t('header.buy')}
           </StyledNavLink>
           <StyledNavLink
             id={`pool-nav-link`}
@@ -303,28 +301,9 @@ export default function Header() {
           >
             {t('header.pool')}
           </StyledNavLink>
-          <StyledNavLink
-            id={`rug-nav-link`}
-            to={'/rug/1'}
-            isActive={(match, { pathname }) => Boolean(match) || pathname.startsWith('/rug')}
-          >
-            {t('header.farm')}
-          </StyledNavLink>
-          <StyledNavLink
-            id={`stake-nav-link`}
-            to={'/stake/0'}
-            isActive={(match, { pathname }) => Boolean(match) || pathname.startsWith('/stake')}
-          >
-            {t('header.stake')}
-          </StyledNavLink>
-          <StyledNavLink id={`vote-nav-link`} to={'/vote'}>
-            {t('header.vote')}
-          </StyledNavLink>
-          <StyledExternalLink id={`info-nav-link`} href={ANALYTICS_PAGE}>
-            {t('header.charts')} <span style={{ fontSize: '11px' }}>↗</span>
-          </StyledExternalLink>
-          <StyledExternalLink id={`gov-nav-link`} href={'https://gov.rugenerous.exchange'}>
-            {t('header.forum')} <span style={{ fontSize: '11px' }}>↗</span>
+                    
+          <StyledExternalLink id={`gov-nav-link`} href={'https://www.rug.farm'}>
+            {t('DAO')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
         </HeaderLinks>
       </HeaderRow>

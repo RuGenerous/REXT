@@ -18,11 +18,12 @@ import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
 import { ChainId } from '@rugenerous/sdk'
-import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
-import { LANDING_PAGE, ANALYTICS_PAGE } from '../../constants'
+import { CardSection, DataCard, CardNoise } from '../../components/earn/styled'
+//import { LANDING_PAGE, ANALYTICS_PAGE } from '../../constants'
+import { ANALYTICS_PAGE } from '../../constants'
 import { useTranslation } from 'react-i18next'
 
-const LiquidityTutorial = LANDING_PAGE + 'tutorials/manage-liquidity'
+//const LiquidityTutorial = LANDING_PAGE + 'tutorials/manage-liquidity'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
@@ -30,7 +31,7 @@ const PageWrapper = styled(AutoColumn)`
 `
 
 const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #2BA9AE 0%, #000000 100%);
   overflow: hidden;
 `
 
@@ -124,7 +125,6 @@ export default function Pool() {
         <SwapPoolTabs active={'pool'} />
 
         <VoteCard>
-          <CardBGImage />
           <CardNoise />
           <CardSection>
             <AutoColumn gap="md">
@@ -134,16 +134,15 @@ export default function Pool() {
               <RowBetween>
                 <TYPE.white fontSize={14}>{t('pool.liquidityProvidersEarn')}</TYPE.white>
               </RowBetween>
-              <ExternalLink
+              {/* <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
                 target="_blank"
                 href={LiquidityTutorial}
               >
                 <TYPE.white fontSize={14}>{t('pool.readMoreProviding')}</TYPE.white>
-              </ExternalLink>
+              </ExternalLink> */}
             </AutoColumn>
-          </CardSection>
-          <CardBGImage />
+          </CardSection>          
           <CardNoise />
         </VoteCard>
 

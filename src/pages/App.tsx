@@ -14,20 +14,15 @@ import {
   RedirectOldAddLiquidityPathStructure,
   RedirectToAddLiquidity
 } from './AddLiquidity/redirects'
-import Earn from './Earn'
-import ManageEarn from './Earn/Manage'
-import Stake from './Stake'
-import ManageStake from './Stake/Manage'
+
 import Pool from './Pool'
-import Buy from './Buy'
 import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-import Vote from './Vote'
-import VotePage from './Vote/VotePage'
-
+//import {tsParticles} from "tsparticles";
+import Particles from 'react-tsparticles'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -64,6 +59,7 @@ const BodyWrapper = styled.div`
 const Marginer = styled.div`
   margin-top: 5rem;
 `
+//
 
 export default function App() {
   return (
@@ -76,6 +72,84 @@ export default function App() {
           <Header />
         </HeaderWrapper>
         <BodyWrapper>
+          <Particles
+            id="tsparticles"
+            params={{
+              background: {
+                color: {
+                  value: '#3E3A71'
+                }
+              },
+              fpsLimit: 60,
+              interactivity: {
+                detectsOn: 'canvas',
+                events: {
+                  onClick: {
+                    enable: true,
+                    mode: 'push'
+                  },
+                  onHover: {
+                    enable: true,
+                    mode: 'repulse'
+                  },
+                  resize: true
+                },
+                modes: {
+                  bubble: {
+                    distance: 400,
+                    duration: 2,
+                    opacity: 0.8,
+                    size: 40
+                  },
+                  push: {
+                    quantity: 4
+                  },
+                  repulse: {
+                    distance: 200,
+                    duration: 0.4
+                  }
+                }
+              },
+              particles: {
+                color: {
+                  value: '#2BA9AE'
+                },
+                links: {
+                  color: '#2BA9AE',
+                  distance: 150,
+                  enable: true,
+                  // opacity: 0.5,
+                  width: 1
+                },
+                collisions: {
+                  enable: true
+                },
+                move: {
+                  direction: 'none',
+                  enable: true,
+                  outMode: 'bounce',
+                  random: false,
+                  speed: 6,
+                  straight: false
+                },
+                number: {
+                  density: {
+                    enable: true,
+                    value_area: 800
+                  },
+                  value: 80
+                },
+                shape: {
+                  type: 'triangle'
+                },
+                size: {
+                  random: true,
+                  value: 5
+                }
+              },
+              detectRetina: true
+            }}
+          />
           <Popups />
           <Polling />
           <Web3ReactManager>
@@ -83,12 +157,8 @@ export default function App() {
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
-              <Route exact strict path="/buy" component={Buy} />
               <Route exact strict path="/find" component={PoolFinder} />
               <Route exact strict path="/pool" component={Pool} />
-              <Route exact strict path="/rug/:version" component={Earn} />
-              <Route exact strict path="/stake/:version" component={Stake} />
-              <Route exact strict path="/vote" component={Vote} />
               <Route exact strict path="/create" component={RedirectToAddLiquidity} />
               <Route exact path="/add" component={AddLiquidity} />
               <Route exact path="/add/:currencyIdA" component={RedirectOldAddLiquidityPathStructure} />
@@ -98,9 +168,6 @@ export default function App() {
               <Route exact path="/create/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
               <Route exact strict path="/remove/:tokens" component={RedirectOldRemoveLiquidityPathStructure} />
               <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
-              <Route exact strict path="/rug/:currencyIdA/:currencyIdB/:version" component={ManageEarn} />
-              <Route exact strict path="/stake/:version/:rewardCurrencyId" component={ManageStake} />
-              <Route exact strict path="/vote/:id" component={VotePage} />
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>
