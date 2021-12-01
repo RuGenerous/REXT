@@ -117,7 +117,7 @@ export default function App() {
                 links: {
                   color: '#2BA9AE',
                   distance: 150,
-                  enable: true,
+                  enable: false,
                   // opacity: 0.5,
                   width: 2
                 },
@@ -137,14 +137,14 @@ export default function App() {
                     enable: true,
                     value_area: 800
                   },
-                  value: 80
+                  value: 200
                 },
                 shape: {
-                  type: ['triangle', 'circle']
+                  type: ['circle']
                 },
                 size: {
                   random: true,
-                  value: 5
+                  value: 10
                 }
               },
               detectRetina: true
