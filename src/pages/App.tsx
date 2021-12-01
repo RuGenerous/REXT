@@ -90,16 +90,16 @@ export default function App() {
                   },
                   onHover: {
                     enable: true,
-                    mode: 'repulse'
+                    mode: 'bubble'
                   },
                   resize: true
                 },
                 modes: {
                   bubble: {
-                    distance: 400,
+                    distance: 200,
                     duration: 2,
                     opacity: 0.8,
-                    size: 40
+                    size: 20
                   },
                   push: {
                     quantity: 7
@@ -117,7 +117,7 @@ export default function App() {
                 links: {
                   color: '#2BA9AE',
                   distance: 150,
-                  enable: true,
+                  enable: false,
                   // opacity: 0.5,
                   width: 2
                 },
@@ -127,9 +127,9 @@ export default function App() {
                 move: {
                   direction: 'none',
                   enable: true,
-                  outMode: 'bounce',
+                  outMode: 'out',
                   random: false,
-                  speed: 3,
+                  speed: 2,
                   straight: false
                 },
                 number: {
@@ -140,11 +140,11 @@ export default function App() {
                   value: 80
                 },
                 shape: {
-                  type: ['triangle', 'circle']
+                  type: ['circle']
                 },
                 size: {
                   random: true,
-                  value: 5
+                  value: 10
                 }
               },
               detectRetina: true
