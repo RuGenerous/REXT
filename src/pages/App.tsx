@@ -102,7 +102,7 @@ export default function App() {
                     size: 20
                   },
                   push: {
-                    quantity: 7
+                    quantity: 1
                   },
                   repulse: {
                     distance: 50,
@@ -137,7 +137,7 @@ export default function App() {
                     enable: true,
                     value_area: 800
                   },
-                  value: 10
+                  value: 2
                 },
                 shape: {
                   type: ['circle']
