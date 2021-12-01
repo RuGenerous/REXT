@@ -1,17 +1,14 @@
 import React, { useRef } from 'react'
-import { MessageCircle, Send, Info, Twitter, GitHub, Book, Calendar } from 'react-feather'
+import { MessageCircle, Send, Twitter, GitHub} from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
-import { LANDING_PAGE } from '../../constants'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleModal } from '../../state/application/hooks'
 
-import { StyledMenu, StyledMenuButton, MenuFlyout, MenuItem, MenuNavItem } from '../StyledMenu'
+import { StyledMenu, StyledMenuButton, MenuFlyout, MenuItem} from '../StyledMenu'
 
 import { useTranslation } from 'react-i18next'
-
-const TutorialPage = LANDING_PAGE + 'tutorials'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -42,23 +39,19 @@ export default function Menu() {
 
       {open && (
         <NarrowMenuFlyout>
-          <MenuItem id="link" href={LANDING_PAGE}>
+          {/* <MenuItem id="link" href={LANDING_PAGE}>
             <Info size={14} />
             {t('menu.about')}
           </MenuItem>
-          <MenuNavItem id="link" to={'/IDO'}>
-            <Calendar size={14} />
-            {t('menu.idos')}
-          </MenuNavItem>
           <MenuItem id="link" href={TutorialPage}>
             <Book size={14} />
             {t('menu.tutorials')}
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem id="link" href="https://t.me/rugenerous">
             <Send size={14} />
             {t('menu.telegram')}
           </MenuItem>
-          <MenuItem id="link" href="https://discord.com/invite/PARrDYYbfw">
+          <MenuItem id="link" href="https://discord.gg/N5dgz3Nbpz">
             <MessageCircle size={14} />
             {t('menu.discord')}
           </MenuItem>

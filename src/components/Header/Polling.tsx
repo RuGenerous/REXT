@@ -24,8 +24,8 @@ const StyledPolling = styled.div`
   `}
 `
 const StyledPollingDot = styled.div`
-  width: 8px;
-  height: 8px;
+  width: 19px;
+  height: 19px;
   min-height: 8px;
   min-width: 8px;
   margin-left: 0.5rem;
@@ -53,8 +53,8 @@ const Spinner = styled.div`
   border-bottom: 1px solid transparent;
   border-left: 2px solid ${({ theme }) => theme.green1};
   background: transparent;
-  width: 14px;
-  height: 14px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   position: relative;
 
@@ -86,7 +86,7 @@ export default function Polling() {
   return (
     <ExternalLink href={chainId && blockNumber ? getEtherscanLink(chainId, blockNumber.toString(), 'block') : ''}>
       <StyledPolling>
-        <TYPE.small style={{ opacity: isMounted ? '0.2' : '0.6' }}>{blockNumber}</TYPE.small>
+        <TYPE.largeHeader style={{ opacity: isMounted ? '1' : '0.6' }}>Block Height - {blockNumber}</TYPE.largeHeader>
         <StyledPollingDot>{!isMounted && <Spinner />}</StyledPollingDot>
       </StyledPolling>
     </ExternalLink>

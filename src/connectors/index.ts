@@ -29,7 +29,7 @@ export const injected = new InjectedConnector({
 export const walletlink = new WalletLinkConnector({
   url: NETWORK_URL,
   appName: 'Rugenerous',
-  appLogoUrl: 'https://raw.githubusercontent.com/rugenerous/interface/master/public/images/384x384_App_Icon.rug'
+  appLogoUrl: 'https://raw.githubusercontent.com/rugenerous/interface/master/public/images/384x384_App_Icon.png'
 })
 
 export const walletconnect = new WalletConnectConnector({

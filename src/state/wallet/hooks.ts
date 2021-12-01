@@ -7,7 +7,6 @@ import { useActiveWeb3React } from '../../hooks'
 import { useMulticallContract } from '../../hooks/useContract'
 import { isAddress } from '../../utils'
 import { useSingleContractMultipleData, useMultipleContractSingleData } from '../multicall/hooks'
-import { useTotalRugEarned } from '../stake/hooks'
 
 
 /**
@@ -141,15 +140,11 @@ export function useAggregateRugBalance(): TokenAmount | undefined {
   const rug = chainId ? RUG[chainId] : undefined
 
   const rugBalance: TokenAmount | undefined = useTokenBalance(account ?? undefined, rug)
-  const rugUnHarvested: TokenAmount | undefined = useTotalRugEarned()
 
   if (!rug) return undefined
 
   return new TokenAmount(
     rug,
-    JSBI.add(
-      rugBalance?.raw ?? JSBI.BigInt(0),
-      rugUnHarvested?.raw ?? JSBI.BigInt(0)
-    )
+      rugBalance?.raw ?? JSBI.BigInt(0)
   )
 }

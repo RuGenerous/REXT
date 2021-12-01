@@ -7,7 +7,7 @@ export const GAS_PRICE = 225
 
 export const ROUTER_ADDRESS: { [chainId in ChainId]: string } = {
   [ChainId.FUJI]: '0x0000000000000000000000000000000000000000',
-  [ChainId.AVALANCHE]: '0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106'
+  [ChainId.AVALANCHE]: '0x479A682f5873c3331452E675Fa6356c00068Ab7C'
 }
 
 export const LANDING_PAGE = 'https://ruggy.exchange/'
@@ -23,8 +23,8 @@ type ChainTokenList = {
 }
 
 export const RUG: { [chainId in ChainId]: Token } = {
-  [ChainId.FUJI]: new Token(ChainId.FUJI, '0x0000000000000000000000000000000000000000', 18, 'RUG', 'Rugenerous'),
-  [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, '0x60781C2586D68229fde47564546784ab3fACA982', 18, 'RUG', 'Rugenerous')
+  [ChainId.FUJI]: new Token(ChainId.FUJI, '0x0000000000000000000000000000000000000000', 9, 'RUG', 'Rugenerous'),
+  [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, '0xb8EF3a190b68175000B74B4160d325FD5024760e', 9, 'RUG', 'RuGenerous')
 }
 
 export const ETH: { [chainId in ChainId]: Token } = {
@@ -723,7 +723,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   METAMASK: {
     connector: injected,
     name: 'MetaMask',
-    iconName: 'metamask.rug',
+    iconName: 'metamask.png',
     description: 'Easy-to-use browser extension.',
     href: null,
     color: '#E8831D'
@@ -783,10 +783,3 @@ export const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent = new Percent(JSBI.BigInt(
 export const MIN_ETH: JSBI = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(16)) // .01 ETH
 export const BETTER_TRADE_LINK_THRESHOLD = new Percent(JSBI.BigInt(75), JSBI.BigInt(10000))
 
-export const WYRE_API_KEY = process.env.REACT_APP_WYRE_API_KEY ? process.env.REACT_APP_WYRE_API_KEY : ''
-export const WYRE_SECRET_KEY = process.env.REACT_APP_WYRE_SECRET_KEY ? process.env.REACT_APP_WYRE_SECRET_KEY : ''
-export const WYRE_ID = process.env.REACT_APP_WYRE_ID ? process.env.REACT_APP_WYRE_ID : ''
-export const WYRE_API_URL = 'https://api.sendwyre.com'
-export const WYRE_QUOTE_API_ENDPOINT = '/v3/orders/quote/partner'
-export const WYRE_RESERVE_API_ENDPOINT = '/v3/orders/reserve'
-export const WYRE_CALLBACK_URL = 'https://app.rugenerous.exchange/'
