@@ -90,16 +90,16 @@ export default function App() {
                   },
                   onHover: {
                     enable: true,
-                    mode: 'repulse'
+                    mode: 'bubble'
                   },
                   resize: true
                 },
                 modes: {
                   bubble: {
-                    distance: 400,
+                    distance: 200,
                     duration: 2,
                     opacity: 0.8,
-                    size: 40
+                    size: 20
                   },
                   push: {
                     quantity: 7
@@ -127,9 +127,9 @@ export default function App() {
                 move: {
                   direction: 'none',
                   enable: true,
-                  outMode: 'bounce',
+                  outMode: 'out',
                   random: false,
-                  speed: 3,
+                  speed: 2,
                   straight: false
                 },
                 number: {
@@ -137,7 +137,7 @@ export default function App() {
                     enable: true,
                     value_area: 800
                   },
-                  value: 200
+                  value: 80
                 },
                 shape: {
                   type: ['circle']
