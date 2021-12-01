@@ -29,7 +29,6 @@ const AppWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  overflow-x: hidden;
 `
 
 const HeaderWrapper = styled.div`
@@ -78,7 +77,7 @@ export default function App() {
             params={{
               background: {
                 color: {
-                  value: '#3E3A71'
+                  value: 'rgb(44 42 82)'
                 }
               },
               fpsLimit: 60,
