@@ -10,7 +10,7 @@ import { StyledInternalLink, TYPE, HideSmall, ExternalLink } from '../../theme'
 import { Text } from 'rebass'
 import Card from '../../components/Card'
 import { RowBetween, RowFixed } from '../../components/Row'
-import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
+import { ButtonInvisible, ButtonPrimary, ButtonSecondary } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -58,6 +58,10 @@ const ResponsiveButtonPrimary = styled(ButtonPrimary)`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 48%;
   `};
+`
+const ResponsiveButtonInvisible = styled(ButtonInvisible)`
+  width: fit-content;
+  
 `
 
 const ResponsiveButtonSecondary = styled(ButtonSecondary)`
@@ -201,10 +205,12 @@ export default function Pool() {
             )}
 
             <AutoColumn justify={'center'} gap="md">
-              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+              <Text textAlign="center" fontSize={25} style={{ padding: '.5rem 0 .5rem 0' }}>
                 {hasV1Liquidity ? t('pool.uniswapV1Found') : t('pool.noSeePoolJoined')}{' '}
                 <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
+                  <ResponsiveButtonInvisible>
                   {hasV1Liquidity ? t('pool.migrateNow') : t('pool.importIt')}
+                  </ResponsiveButtonInvisible>
                 </StyledInternalLink>
               </Text>
             </AutoColumn>
