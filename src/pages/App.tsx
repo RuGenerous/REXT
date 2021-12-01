@@ -80,7 +80,7 @@ export default function App() {
                   value: '#3E3A71'
                 }
               },
-              fpsLimit: 20,
+              fpsLimit: 60,
               interactivity: {
                 detectsOn: 'canvas',
                 events: {
@@ -144,7 +144,7 @@ export default function App() {
                 },
                 size: {
                   random: true,
-                  value: 10
+                  value: 8
                 }
               },
               detectRetina: true
