@@ -102,10 +102,10 @@ export default function App() {
                     size: 40
                   },
                   push: {
-                    quantity: 4
+                    quantity: 7
                   },
                   repulse: {
-                    distance: 200,
+                    distance: 50,
                     duration: 0.4
                   }
                 }
@@ -119,7 +119,7 @@ export default function App() {
                   distance: 150,
                   enable: true,
                   // opacity: 0.5,
-                  width: 1
+                  width: 2
                 },
                 collisions: {
                   enable: true
@@ -129,7 +129,7 @@ export default function App() {
                   enable: true,
                   outMode: 'bounce',
                   random: false,
-                  speed: 6,
+                  speed: 3,
                   straight: false
                 },
                 number: {
@@ -140,7 +140,7 @@ export default function App() {
                   value: 80
                 },
                 shape: {
-                  type: 'triangle'
+                  type: ['triangle', 'circle']
                 },
                 size: {
                   random: true,
