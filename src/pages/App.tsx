@@ -72,6 +72,8 @@ export default function App() {
           <Header />
         </HeaderWrapper>
         <BodyWrapper>
+        <Popups />
+          <Polling />
           <Particles
             id="tsparticles"
             params={{
@@ -151,8 +153,7 @@ export default function App() {
               detectRetina: true
             }}
           />
-          <Popups />
-          <Polling />
+          
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/swap" component={Swap} />
