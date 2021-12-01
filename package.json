@@ -125,6 +125,7 @@
   "dependencies": {
     "@types/crypto-js": "^4.0.2",
     "crypto-js": "^4.0.0",
+    "react-router": "^5.2.1",
     "react-tsparticles": "^1.37.5",
     "tsparticles": "^1.37.5"
   }
