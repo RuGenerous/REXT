@@ -294,7 +294,11 @@ export default function Swap() {
   return (
     <>
      <BottomText>
-            THE SWAPOOOOOR...
+     🚩 THE SWAPOOOOOR... 🚩
+      </BottomText>
+      <br/>
+      <BottomText>
+      'Please consider the 2 red flag sitting on top of the screen before swapping'
       </BottomText>
       <br/>
       <TokenWarningModal

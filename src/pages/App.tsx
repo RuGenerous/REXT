@@ -23,6 +23,7 @@ import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 //import {tsParticles} from "tsparticles";
 import Particles from 'react-tsparticles'
+import Flag from '../assets/images/flag.png'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -140,11 +141,12 @@ export default function App() {
                   value: 2
                 },
                 shape: {
-                  type: ['circle']
+                  type: "image",
+                  image: {'src': Flag},
                 },
                 size: {
                   random: true,
-                  value: 8
+                  value: 25
                 }
               },
               detectRetina: true
