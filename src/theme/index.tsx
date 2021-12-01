@@ -42,38 +42,38 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    text1: darkMode ? '#FFFFFF' : '#000000',
-    text2: darkMode ? '#C3C5CB' : '#565A69',
-    text3: darkMode ? '#6C7284' : '#888D9B',
-    text4: darkMode ? '#565A69' : '#C3C5CB',
+    text1: darkMode ? '#FFFFFF' : '#FFFFFF',
+    text2: darkMode ? '#C3C5CB' : '#C3C5CB',
+    text3: darkMode ? '#6C7284' : '#6C7284',
+    text4: darkMode ? '#565A69' : '#565A69',
     text5: darkMode ? '#2BA9AE' : '#2BA9AE',
 
     // backgrounds / greys
     bg1: darkMode ? '#3E3A71' : '#3E3A71',
     bg2: darkMode ? '#3E3A71' : '#3E3A71',
-    bg3: darkMode ? '#40444F' : '#EDEEF2',
+    bg3: darkMode ? '#40444F' : '#40444F',
     bg4: darkMode ? '#2BA9AE' : '#2BA9AE',
-    bg5: darkMode ? '#6C7284' : '#888D9B',
+    bg5: darkMode ? '#6C7284' : '#6C7284',
 
     //specialty colors
-    modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
-    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
+    modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,.425)',
+    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.1)',
 
     //primary colors
-    primary1: darkMode ? '#2BA9AE' : '#3E3A71',
+    primary1: darkMode ? '#2BA9AE' : '#2BA9AE',
     primary2: darkMode ? '#2BA9AE' : '#2BA9AE',
-    primary3: darkMode ? '#4D8FEA' : '#FF6B00',
-    primary4: darkMode ? '#376bad70' : '#FF6B00',
-    primary5: darkMode ? '#153d6f70' : '#FF6B00',
+    primary3: darkMode ? '#4D8FEA' : '#4D8FEA',
+    primary4: darkMode ? '#376bad70' : '#376bad70',
+    primary5: darkMode ? '#153d6f70' : '#153d6f70',
     primary6: darkMode ? '#2BA9AE' : '#2BA9AE',
 
     // color text
-    primaryText1: darkMode ? '#6da8ff' : '#ffffff',
+    primaryText1: darkMode ? '#6da8ff' : '#6da8ff',
 
     // secondary colors
     secondary1: darkMode ? '#2BA9AE' : '#2BA9AE',
-    secondary2: darkMode ? '#2BA9AE' : '#F6DDE8',
-    secondary3: darkMode ? '#2BA9AE' : '#FDEAF1',
+    secondary2: darkMode ? '#2BA9AE' : '#2BA9AE',
+    secondary3: darkMode ? '#2BA9AE' : '#2BA9AE',
 
     // other
     red1: '#2BA9AE',

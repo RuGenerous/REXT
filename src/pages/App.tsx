@@ -129,15 +129,15 @@ export default function App() {
                   enable: true,
                   outMode: 'out',
                   random: false,
-                  speed: 2,
-                  straight: false
+                  speed: 1,
+                  straight: true
                 },
                 number: {
                   density: {
                     enable: true,
                     value_area: 800
                   },
-                  value: 80
+                  value: 30
                 },
                 shape: {
                   type: ['circle']
