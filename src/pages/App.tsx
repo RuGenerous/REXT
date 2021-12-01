@@ -80,7 +80,7 @@ export default function App() {
                   value: '#3E3A71'
                 }
               },
-              fpsLimit: 60,
+              fpsLimit: 20,
               interactivity: {
                 detectsOn: 'canvas',
                 events: {
@@ -137,7 +137,7 @@ export default function App() {
                     enable: true,
                     value_area: 800
                   },
-                  value: 30
+                  value: 10
                 },
                 shape: {
                   type: ['circle']
