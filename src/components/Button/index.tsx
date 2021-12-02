@@ -109,6 +109,12 @@ export const ButtonGray = styled(Base)`
   }
 `
 
+export const ButtonInvisible = styled(Base)`
+  background-color: transparent ;
+  color: ${({ theme }) => theme.primary1};  
+  margin-left: 25%;
+`
+
 export const ButtonSecondary = styled(Base)`
   border: 1px solid ${({ theme }) => theme.primary4};
   color: ${({ theme }) => theme.primary1};

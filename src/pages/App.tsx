@@ -23,12 +23,12 @@ import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 //import {tsParticles} from "tsparticles";
 import Particles from 'react-tsparticles'
+import Flag from '../assets/images/flag.png'
 
 const AppWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  overflow-x: hidden;
 `
 
 const HeaderWrapper = styled.div`
@@ -72,12 +72,14 @@ export default function App() {
           <Header />
         </HeaderWrapper>
         <BodyWrapper>
+        <Popups />
+          <Polling />
           <Particles
             id="tsparticles"
             params={{
               background: {
                 color: {
-                  value: '#3E3A71'
+                  value: 'rgb(44 42 82)'
                 }
               },
               fpsLimit: 60,
@@ -102,7 +104,7 @@ export default function App() {
                     size: 20
                   },
                   push: {
-                    quantity: 7
+                    quantity: 1
                   },
                   repulse: {
                     distance: 50,
@@ -129,29 +131,29 @@ export default function App() {
                   enable: true,
                   outMode: 'out',
                   random: false,
-                  speed: 2,
-                  straight: false
+                  speed: 1,
+                  straight: true
                 },
                 number: {
                   density: {
                     enable: true,
                     value_area: 800
                   },
-                  value: 80
+                  value: 2
                 },
                 shape: {
-                  type: ['circle']
+                  type: "image",
+                  image: {'src': Flag},
                 },
                 size: {
                   random: true,
-                  value: 10
+                  value: 25
                 }
               },
               detectRetina: true
             }}
           />
-          <Popups />
-          <Polling />
+          
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/swap" component={Swap} />
