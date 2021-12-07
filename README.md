@@ -12,7 +12,7 @@ An open source interface for Rugenerous -- a community-driven decentralized exch
 
 ## Accessing the Rugenerous Interface
 
-Visit [app.ruggy.exchange](https://app.ruggy.exchange).
+Visit [swap.rug.farm](https://swap.rug.farm).
 
 ## Development
 
