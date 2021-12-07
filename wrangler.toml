@@ -1,6 +1,6 @@
 name = "rugenerous-app-temp"
 type = "javascript"
-route = "app.rugenerous.exchange/*"
+route = "swap.rug.farm/*"
 
 [site]
 bucket = "./build"
