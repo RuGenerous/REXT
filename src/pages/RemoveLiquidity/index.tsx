@@ -1,8 +1,8 @@
-import { splitSignature } from '@ethersproject/bytes'
+//import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, CAVAX, Percent, WAVAX } from '@rugenerous/sdk'
-import React, { useCallback, useContext, useMemo, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown, Plus } from 'react-feather'
 import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router'
@@ -108,6 +108,16 @@ export default function RemoveLiquidity({
     chainId ? ROUTER_ADDRESS[chainId] : ROUTER_ADDRESS[ChainId.AVALANCHE]
   )
 
+  // check if user has gone through approval process, used to show two step buttons, reset on token change
+  const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
+
+  // mark when a user has submitted an approval, reset onTokenSelection for input field
+  useEffect(() => {
+    if (approval === ApprovalState.PENDING) {
+      setApprovalSubmitted(true)
+    }
+  }, [approval, approvalSubmitted])
+
   const isArgentWallet = false
 
   async function onAttemptToApprove() {
@@ -120,56 +130,59 @@ export default function RemoveLiquidity({
       return approveCallback()
     }
 
+    approveCallback()
+
+
     // try to gather a signature for permission
-    const nonce = await pairContract.nonces(account)
+    // const nonce = await pairContract.nonces(account)
 
-    const EIP712Domain = [
-      { name: 'name', type: 'string' },
-      { name: 'version', type: 'string' },
-      { name: 'chainId', type: 'uint256' },
-      { name: 'verifyingContract', type: 'address' }
-    ]
-    const domain = {
-      name: 'Rugenerous Liquidity',
-      version: '1',
-      chainId: chainId,
-      verifyingContract: pair.liquidityToken.address
-    }
-    const Permit = [
-      { name: 'owner', type: 'address' },
-      { name: 'spender', type: 'address' },
-      { name: 'value', type: 'uint256' },
-      { name: 'nonce', type: 'uint256' },
-      { name: 'deadline', type: 'uint256' }
-    ]
-    const message = {
-      owner: account,
-      spender: ROUTER_ADDRESS[chainId],
-      value: liquidityAmount.raw.toString(),
-      nonce: nonce.toHexString(),
-      deadline: deadline.toNumber()
-    }
-    const data = JSON.stringify({
-      types: {
-        EIP712Domain,
-        Permit
-      },
-      domain,
-      primaryType: 'Permit',
-      message
-    })
+    // const EIP712Domain = [
+    //   { name: 'name', type: 'string' },
+    //   { name: 'version', type: 'string' },
+    //   { name: 'chainId', type: 'uint256' },
+    //   { name: 'verifyingContract', type: 'address' }
+    // ]
+    // const domain = {
+    //   name: 'Rugable Liquidity',
+    //   version: '1',
+    //   chainId: chainId,
+    //   verifyingContract: pair.liquidityToken.address
+    // }
+    // const Permit = [
+    //   { name: 'owner', type: 'address' },
+    //   { name: 'spender', type: 'address' },
+    //   { name: 'value', type: 'uint256' },
+    //   { name: 'nonce', type: 'uint256' },
+    //   { name: 'deadline', type: 'uint256' }
+    // ]
+    // const message = {
+    //   owner: account,
+    //   spender: ROUTER_ADDRESS[chainId],
+    //   value: liquidityAmount.raw.toString(),
+    //   nonce: nonce.toHexString(),
+    //   deadline: deadline.toNumber()
+    // }
+    // const data = JSON.stringify({
+    //   types: {
+    //     EIP712Domain,
+    //     Permit
+    //   },
+    //   domain,
+    //   primaryType: 'Permit',
+    //   message
+    // })
 
-    library
-      .send('eth_signTypedData_v4', [account, data])
-      .then(splitSignature)
-      .then(signature => {
-        setSignatureData({
-          v: signature.v,
-          r: signature.r,
-          s: signature.s,
-          deadline: deadline.toNumber()
-        })
-      })
+    // library
+    //   .send('eth_signTypedData_v4', [account, data])
+    //   .then(splitSignature)
+    //   .then(signature => {
+    //     setSignatureData({
+    //       v: signature.v,
+    //       r: signature.r,
+    //       s: signature.s,
+    //       deadline: deadline.toNumber()
+    //     })
+    //   })
       .catch(error => {
         // for all errors other than 4001 (EIP-1193 user rejected request), fall back to manual approve
         if (error?.code !== 4001) {
@@ -227,6 +240,10 @@ export default function RemoveLiquidity({
     let methodNames: string[], args: Array<string | string[] | number | boolean>
     // we have approval, use normal remove liquidity
     if (approval === ApprovalState.APPROVED) {
+
+      // (approval === ApprovalState.NOT_APPROVED ||
+      //   approval === ApprovalState.PENDING ||
+      //   (approvalSubmitted && approval === ApprovalState.APPROVED))
       // removeLiquidityAVAX
       if (oneCurrencyIsETH) {
         methodNames = ['removeLiquidityAVAX', 'removeLiquidityAVAXSupportingFeeOnTransferTokens']

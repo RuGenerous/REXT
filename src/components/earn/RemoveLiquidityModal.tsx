@@ -418,7 +418,7 @@ export default function RemoveLiquidityModal({ isOpen, onDismiss, currencyIdA: _
             </RowBetween>
           </>
         )}
-        <ButtonPrimary disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
+        <ButtonPrimary disabled={!(approval === ApprovalState.APPROVED )} onClick={onRemove}>
           <Text fontWeight={500} fontSize={20}>
             {/*TODO: Translate using i18n*/}
             Confirm
